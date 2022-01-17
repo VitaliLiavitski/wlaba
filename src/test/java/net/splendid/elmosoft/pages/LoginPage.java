@@ -7,18 +7,18 @@ import net.elmosoft.splendid.driver.page.PageFactory;
 
 public class LoginPage extends Page {
 	
-	@FindBy(id = "user-name")
+	@FindBy(id="user-name")
     private BrowserElement loginField;
 	
-	@FindBy(id = "password")
+	@FindBy(id="password")
     private BrowserElement passwordField;
 	
-	@FindBy(id = "login-button")
+	@FindBy(id="login-button")
     private BrowserElement loginBtn;
 	
 	
-	public HomePage login(String userName, String password) {
-		loginField.type(userName);
+	public HomePage doLogin(String username, String password) {
+		loginField.type(username);
 		passwordField.type(password);
 		loginBtn.click();
 		return PageFactory.initElements(driver, HomePage.class);
@@ -28,16 +28,17 @@ public class LoginPage extends Page {
         driver.get("https://www.saucedemo.com");
         return PageFactory.initElements(driver, LoginPage.class);
     }
+	
 
 	@Override
 	public void checkPage() {
-		waitForPageIsLoaded();
-		loginBtn.waitForElementDisplayed(TEN_SECONDS_WAIT);
+		 waitForPageIsLoaded();
+		 loginBtn.waitForElementDisplayed(TEN_SECONDS_WAIT);
+		
 	}
 
 	@Override
 	public void waitForPageIsLoaded() {
-		driver.waitForPageLoad();
+		 driver.waitForPageLoad();
 	}
-
 }
