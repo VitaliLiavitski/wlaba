@@ -12,6 +12,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import net.elmosoft.splendid.service.runner.SuiteListener;
 import net.elmosoft.splendid.test.BaseSplendidTest;
+import net.splendid.elmosoft.pages.HomePage;
 import net.splendid.elmosoft.pages.LoginPage;
 
 @Listeners({ SuiteListener.class, HTMLReporter.class })
@@ -26,7 +27,7 @@ public class AuthorizationTest extends BaseSplendidTest {
 		LoginPage login = new LoginPage();
 		login.openPage().checkPage();
 		Boolean resultAuthorization = login.doLogin("standard_user", "secret_sauce").isHomePageOpened();
-		Assert.assertTrue(resultAuthorization, "Home page is not opened!");
+		Assert.assertTrue(resultAuthorization, "Home page is not opened!");		
 	}
 
 }

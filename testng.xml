@@ -1,8 +1,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Splendid Suite" >
- 	<test verbose="1" name="Google test" annotations="JDK">
+ 	<test verbose="1" name="Saucedemo test" annotations="JDK">
 		<classes>
-			<class name="net.splendid.elmosoft.tests.GoogleTest" />
+			<class name="net.splendid.elmosoft.tests.AuthorizationTest" />
+			<class name="net.splendid.elmosoft.tests.ShoppingTests" />
+			<class name="net.splendid.elmosoft.tests.SocialNetworkTest">
+				<methods>
+					<include name="verifyTwitter" />
+				</methods>
+			</class>
 		</classes>
 	</test>
 
